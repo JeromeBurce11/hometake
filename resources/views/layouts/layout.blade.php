@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- jQueryUI -->
+    <link href="{{ asset('css/jQueryUI/jquery-ui.min.css')}}" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
@@ -19,5 +22,9 @@
         @yield('content')
         <footer>
             hometakes
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-youtube"></i>
+            <i class="bi bi-twitter"></i>
+            
         </footer>
 </body>

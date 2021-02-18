@@ -13,36 +13,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('website.home');
 });
 
+Route::get('/websitehome', function () {
+    return view('website.home');
+});
 Route::get('/faq', function () {
-    return view('faq');
-});
+    return view('website.faq');
+})->name('FAQ');
 Route::get('/oclp', function () {
-    return view('our-customers-loyalty-program');
+    return view('website.our-customers-loyalty-program');
 });
-Route::get('/pizzas', function () {
-    //get data from db
-    // $pizza = [
-    //     'type' => 'hawaiian',
-    //      'base' => 'garlic crust',
-    //      'price' => 10
-    //     ];
-    // return view('pizzas', $pizza);
-    $pizzas =[
-        ['type' => 'hawaiin', 'base' => 'cheesy crust'],
-        ['type' => 'volcano', 'base' => 'garlic crust'],
-        ['type' => 'veg supreme', 'base' => 'thin & crispy']
-    ];
+Route::get('/vmc', function () {
+    return view('website.video-music-collection');
+});
 
-    return view('pizzas',[ 'pizzas' => $pizzas]);
+Route::get('/sign-in', function () {
+    return view('website.login');
 });
+Route::get('/sign-up', function () {
+    return view('website.registration');
+});
+// Route::get('/pizzas', function () {
+//     //get data from db
+//     // $pizza = [
+//     //     'type' => 'hawaiian',
+//     //      'base' => 'garlic crust',
+//     //      'price' => 10
+//     //     ];
+//     // return view('pizzas', $pizza);
+//     $pizzas =[
+//         ['type' => 'hawaiin', 'base' => 'cheesy crust'],
+//         ['type' => 'volcano', 'base' => 'garlic crust'],
+//         ['type' => 'veg supreme', 'base' => 'thin & crispy']
+//     ];
+
+//     return view('pizzas',[ 'pizzas' => $pizzas]);
+// });
 // Route::get('/pizzas', function () {
 //     // return "pizza!";
 //     return ['name'=>'veg pizzas','base'=>'classic'];
 // });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
